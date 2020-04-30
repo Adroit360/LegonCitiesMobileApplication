@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_royals"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="Royals" />
+
+    <item
+        android:id="@+id/navigation_explore"
+        android:icon="@drawable/explore"
+        android:title="Explore" />
+
+    <item
+        android:id="@+id/navigation_shop"
+        android:icon="@drawable/shop"
+        android:title="Shop" />
+  
+    <item
+        android:id="@+id/navigation_chat"
+        android:icon="@drawable/chat"
+        android:title="chat" />
+  
+
+</menu>

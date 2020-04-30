@@ -1,0 +1,622 @@
+
+<android.support.constraint.ConstraintLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+        <android.webkit.WebView
+        android:id="@+id/home_webview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:padding="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/navigation">
+        <ProgressBar
+        android:id="@+id/main_progressbar"
+        style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_height="40dp"/>
+         </android.webkit.WebView>
+
+        <android.webkit.WebView
+        android:id="@+id/explore_webview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/navigation">
+                <ProgressBar
+        android:id="@+id/explore_progressbar"
+        style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_height="40dp"/>
+
+        </android.webkit.WebView>
+
+
+        <android.webkit.WebView
+        android:id="@+id/shop_webview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/navigation">
+                <ProgressBar
+        android:id="@+id/shop_progressbar"
+        style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_height="40dp"/>
+
+        </android.webkit.WebView>
+  
+        <android.webkit.WebView
+        android:id="@+id/chat_webview"
+        android:visibility="visible"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/navigation">
+                <ProgressBar
+            android:id="@+id/chat_progressbar"
+        style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_height="40dp"/>
+
+        </android.webkit.WebView>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/explore_page"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginBottom="55dp"
+            android:visibility="gone"
+        
+            android:background="@android:color/white"
+            app:layout_constraintBottom_toTopOf="@+id/navigation">
+        
+            <android.support.v7.widget.CardView
+                android:id="@+id/appbar_explore"
+                android:layout_width="match_parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_height="50dp">
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:background="@color/lgctycolorprimary"
+                    android:layout_height="match_parent">
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="30dp"
+                        android:id="@+id/explore_appbarlogo"
+                        android:layout_marginLeft="15dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:src="@drawable/logo"
+                        android:layout_height="30dp"/>
+
+                    <TextView
+                        android:text="Explore"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintLeft_toRightOf="@+id/explore_appbarlogo"
+                        android:layout_width="0dp"
+                        android:textSize="20dp"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:layout_height="0dp"/>
+
+
+                </android.support.constraint.ConstraintLayout>
+            </android.support.v7.widget.CardView>
+
+            <ScrollView
+                app:layout_constraintTop_toBottomOf="@+id/appbar_explore"
+                android:layout_width="0dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_height="0dp">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                     <LinearLayout
+                        android:gravity="center_horizontal"
+                        android:layout_width="match_parent"
+                        android:weightSum="2"
+                        android:layout_height="wrap_content">
+                        <android.support.v7.widget.CardView
+                            android:background="@android:color/black"
+                            android:id="@+id/news_card"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_margin="10dp"
+                            android:layout_height="115dp">
+                            <android.support.constraint.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:background="@drawable/newsicon"
+                                android:layout_height="match_parent">
+                                <TextView
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    android:background="@android:color/white"
+                                    android:gravity="center_horizontal|center_vertical"
+                                    android:textColor="@android:color/black"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    android:text="NEWS"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"/>
+                            </android.support.constraint.ConstraintLayout>
+                            </android.support.v7.widget.CardView>
+
+                        <android.support.v7.widget.CardView
+                            android:background="@android:color/black"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:id="@+id/videos_card"
+                            android:layout_margin="10dp"
+                            android:layout_height="115dp">
+                            <android.support.constraint.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:background="@drawable/video"
+                                android:layout_height="match_parent">
+                                <TextView 
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                 android:background="@android:color/white"
+                                    android:gravity="center_horizontal|center_vertical"
+                                    android:textColor="@android:color/black"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    android:text="VIDEOS"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"/>
+                            </android.support.constraint.ConstraintLayout>
+
+                        </android.support.v7.widget.CardView>
+
+                    </LinearLayout>
+
+                     <LinearLayout
+                        android:gravity="center_horizontal"
+                        android:layout_width="match_parent"
+                        android:weightSum="2"
+                        android:layout_height="wrap_content">
+                        <android.support.v7.widget.CardView
+                            
+                            android:layout_width="0dp"
+                            android:id="@+id/fixtures_card"
+                            android:layout_weight="1"
+                            android:layout_margin="10dp"
+                            android:layout_height="115dp">
+                            <android.support.constraint.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:background="@drawable/training"
+                                android:layout_height="match_parent">
+                                <TextView
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                 android:background="@android:color/white"
+                                    android:gravity="center_horizontal|center_vertical"
+                                    android:textColor="@android:color/black"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    android:text="FIXTURES AND TABLES"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"/>
+                            </android.support.constraint.ConstraintLayout>
+                            </android.support.v7.widget.CardView>
+
+                        <android.support.v7.widget.CardView
+                            android:background="@android:color/black"
+                            android:id="@+id/players_card"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_margin="10dp"
+                            android:layout_height="115dp">
+                            <android.support.constraint.ConstraintLayout
+                                android:background="@drawable/playericon"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+                                <TextView 
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                 android:background="@android:color/white"
+                                    android:gravity="center_horizontal|center_vertical"
+                                    android:textColor="@android:color/black"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    android:text="PLAYERS"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"/>
+                            </android.support.constraint.ConstraintLayout>
+
+                        </android.support.v7.widget.CardView>
+
+                    </LinearLayout>
+
+                     <LinearLayout
+                        android:gravity="center_horizontal"
+                        android:layout_width="match_parent"
+                        android:weightSum="2"
+                        android:layout_height="wrap_content">
+                        <android.support.v7.widget.CardView
+                            android:background="@android:color/black"
+                            android:id="@+id/shops_card"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_margin="10dp"
+                            android:layout_height="115dp">
+                            <android.support.constraint.ConstraintLayout
+                                android:background="@drawable/shopicon"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+                                <TextView
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                 android:background="@android:color/white"
+                                    android:gravity="center_horizontal|center_vertical"
+                                    android:textColor="@android:color/black"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    android:text="SHOP"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"/>
+                            </android.support.constraint.ConstraintLayout>
+                            </android.support.v7.widget.CardView>
+
+                        <android.support.v7.widget.CardView
+                            android:background="@android:color/black"
+                            android:id="@+id/legoncitiescom_card"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_margin="10dp"
+                            android:layout_height="115dp">
+                            <android.support.constraint.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:background="@drawable/womenskit"
+                                android:layout_height="match_parent">
+                                <TextView 
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                 android:background="@android:color/white"
+                                    android:gravity="center_horizontal|center_vertical"
+                                    android:textColor="@android:color/black"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    android:text="LOGONCITIES.COM"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"/>
+                            </android.support.constraint.ConstraintLayout>
+
+                        </android.support.v7.widget.CardView>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </ScrollView>
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/shop_page"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginBottom="55dp"
+         android:background="@android:color/white"
+            app:layout_constraintBottom_toTopOf="@id/navigation">
+        
+            <android.support.v7.widget.CardView
+                android:id="@+id/appbar_shop"
+                android:layout_width="0dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_height="50dp">
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:background="@color/lgctycolorprimary"
+                    android:layout_height="match_parent">
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="30dp"
+                        android:layout_marginLeft="15dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:src="@drawable/logo"
+                        android:layout_height="30dp"/>
+                </android.support.constraint.ConstraintLayout>
+            </android.support.v7.widget.CardView>
+
+            <ScrollView
+                app:layout_constraintTop_toBottomOf="@+id/appbar_shop"
+                android:layout_width="0dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_height="0dp">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                     <LinearLayout
+                        android:gravity="center_horizontal"
+                        android:layout_width="match_parent"
+                        android:weightSum="2"
+                        android:layout_height="wrap_content">
+                        <android.support.v7.widget.CardView
+                            android:id="@+id/menskit_card"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_margin="10dp"
+                            android:layout_height="115dp">
+                            <android.support.constraint.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+                                <ImageView
+                                    android:src="@drawable/player2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"/>
+                                <TextView
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                
+                                    android:gravity="center_horizontal|center_vertical"
+                                    android:textColor="@android:color/black"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    android:text="MEN'S KIT"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"/>
+                            </android.support.constraint.ConstraintLayout>
+                            </android.support.v7.widget.CardView>
+
+                        <android.support.v7.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:id="@+id/womenskit_card"
+                            android:layout_margin="10dp"
+                            android:layout_height="115dp">
+                            <android.support.constraint.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+                                <ImageView
+                                    android:src="@drawable/player2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"/>
+                                <TextView 
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                
+                                    android:gravity="center_horizontal|center_vertical"
+                                    android:textColor="@android:color/black"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    android:text="WOMEN'S KIT"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"/>
+                            </android.support.constraint.ConstraintLayout>
+
+                        </android.support.v7.widget.CardView>
+
+                    </LinearLayout>
+
+                     <LinearLayout
+                        android:gravity="center_horizontal"
+                        android:layout_width="match_parent"
+                        android:weightSum="2"
+                        android:layout_height="wrap_content">
+                        <android.support.v7.widget.CardView
+                            android:layout_width="0dp"
+                            android:id="@+id/training_card"
+                            android:layout_weight="1"
+                            android:layout_margin="10dp"
+                            android:layout_height="115dp">
+                            <android.support.constraint.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+                                <ImageView
+                                    android:src="@drawable/player2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"/>
+                                <TextView
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                
+                                    android:gravity="center_horizontal|center_vertical"
+                                    android:textColor="@android:color/black"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    android:text="TRAINING"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"/>
+                            </android.support.constraint.ConstraintLayout>
+                            </android.support.v7.widget.CardView>
+
+                        <android.support.v7.widget.CardView
+                            android:id="@+id/fashion_card"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_margin="10dp"
+                            android:layout_height="115dp">
+                            <android.support.constraint.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+                                <ImageView
+                                    android:src="@drawable/player2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"/>
+                                <TextView 
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                
+                                    android:gravity="center_horizontal|center_vertical"
+                                    android:textColor="@android:color/black"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    android:text="FASHION"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"/>
+                            </android.support.constraint.ConstraintLayout>
+
+                        </android.support.v7.widget.CardView>
+
+                    </LinearLayout>
+
+                     <LinearLayout
+                        android:gravity="center_horizontal"
+                        android:layout_width="match_parent"
+                        android:weightSum="2"
+                        android:layout_height="wrap_content">
+                        <android.support.v7.widget.CardView
+                            android:id="@+id/equipment_card"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_margin="10dp"
+                            android:layout_height="115dp">
+                            <android.support.constraint.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+                                <ImageView
+                                    android:src="@drawable/player2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"/>
+                                <TextView
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                
+                                    android:gravity="center_horizontal|center_vertical"
+                                    android:textColor="@android:color/black"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    android:text="EQUIPMENT"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"/>
+                            </android.support.constraint.ConstraintLayout>
+                            </android.support.v7.widget.CardView>
+
+                        <android.support.v7.widget.CardView
+                            android:id="@+id/homeware_card"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_margin="10dp"
+                            android:layout_height="115dp">
+                            <android.support.constraint.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+                                <ImageView
+                                    android:src="@drawable/player2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"/>
+                                <TextView 
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                
+                                    android:gravity="center_horizontal|center_vertical"
+                                    android:textColor="@android:color/black"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    android:text="HOMEWARE"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"/>
+                            </android.support.constraint.ConstraintLayout>
+
+                        </android.support.v7.widget.CardView>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </ScrollView>
+
+        </android.support.constraint.ConstraintLayout>
+
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/chat_page"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:background="@drawable/jerseyandshorts"
+            app:layout_constraintBottom_toTopOf="@id/navigation">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:id="@+id/main_btn_register"
+                android:background="@drawable/border_button"
+                android:text="Register"
+                android:layout_marginBottom="70dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_height="wrap_content"/>
+
+           <Button
+                android:layout_width="wrap_content"
+                android:id="@+id/main_btn_login"
+                android:layout_marginTop="70dp"
+                android:background="@drawable/border_button"
+                android:text="Login"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_height="wrap_content"/>
+
+
+        </android.support.constraint.ConstraintLayout>
+
+
+
+        <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toLeftOf="@+id/lin_poweredby"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:background="#979797"
+        app:menu="@menu/navigation" />
+
+        <LinearLayout
+        android:id="@+id/lin_poweredby"
+            android:background="#979797"
+            android:layout_width="70dp"
+            android:text="Supported"
+                android:orientation="vertical"
+            app:layout_constraintLeft_toRightOf="@+id/navigation"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/navigation"
+            android:layout_height="0dp">
+        <TextView
+            android:textColor="@android:color/black"
+            android:text="Powered by"
+            android:gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <ImageView
+            android:src="@drawable/lemla"
+            android:gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
